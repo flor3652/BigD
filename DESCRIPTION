@@ -1,11 +1,11 @@
 Package: BigD
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
+Title: Way to disseminate information.
+Version: 0.0.1.0
 Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends:
-    R (>= 3.2.0)
-License: What license is it under?
+Description: This is for getting information out about things that I am working on for my dissertation. Documentation is simply for practice, and functions are all works in progress. All useful and new functions will eventually be placed into a new package.
+Depends: R (>= 3.2.0)
+Imports: stringr
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
