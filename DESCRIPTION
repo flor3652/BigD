@@ -1,7 +1,7 @@
 Package: BigD
 Title: Way to disseminate information.
 Version: 0.0.1.0
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Authors@R: person("Michael", "Floren", email = "michael.floren@unco.com", role = c("aut", "cre"))
 Description: This is for getting information out about things that I am working on for my dissertation. Documentation is simply for practice, and functions are all works in progress. All useful and new functions will eventually be placed into a new package.
 Depends: R (>= 3.2.0)
 Imports: stringr
