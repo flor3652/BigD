@@ -29,10 +29,10 @@ This is a practice function to see if I'm understanding the concepts (and if it 
 # ztfish <- ztfish[ztfish$count>0,]
 
 #an example with a two way interaction
-irls(count~persons*camper, ztfish)
+zt_irls(count~persons*camper, ztfish)
 
 #an example with a three way interaction
-irls(count~persons*camper*nofish, ztfish)
+zt_irls(count~persons*camper*nofish, ztfish)
 
 }
 \author{
