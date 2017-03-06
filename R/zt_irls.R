@@ -71,7 +71,7 @@ zt_irls <- function(formula, data, epsilon = .001, maxit=10, ...){
   if(k>maxit)
     print(paste("Convergence not reached after", k, "iterations (the maximum set by user)."))
   
-  out <- list(coefficients=alpha[,k], iterations=k) #could also do alpha to see all of the iteracted coefficients...
+  out <- list(coefficients=alpha, iterations=k, l=l) #could also do alpha to see all of the iteracted coefficients...
   out
 }
 
