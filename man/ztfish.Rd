@@ -25,4 +25,3 @@ ztfish
 This datset was pulled offline (see site below), and contains the amount of fish caught by certain people. The meanings of the columns are made up by me to give it context (though I think they are reasonable interpretations of the column headings). The zero counts were removed from this dataset.
 }
 \keyword{datasets}
-

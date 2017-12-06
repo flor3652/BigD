@@ -1,0 +1,10 @@
+#' @name BigD
+#' @docType package
+#' @title Michael Floren's Dissertation Package: On The Small Count Inflated Poisson Distribution
+#' 
+#' @description This package contains functions from my dissertation process. 
+#' 
+#' @details This is a package with functions that I made during my dissertation process. Most are useful, some are not (they were done for practice, and not bothered to be removed). Final distribution of the SCIP function will be released in its own package. Those looking for SCIP functionality should look for the SCIP package (not released publicly as of 11.10.2017).
+#' 
+#' @author Michael Floren
+NULL

@@ -35,10 +35,9 @@ zt_irls(count~persons*camper, ztfish)
 zt_irls(count~persons*camper*nofish, ztfish)
 
 }
-\author{
-Michael Floren
-}
 \seealso{
 \code{\link[pscl]{zeroinfl}}
 }
-
+\author{
+Michael Floren
+}
