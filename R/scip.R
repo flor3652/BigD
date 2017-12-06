@@ -4,7 +4,7 @@
 #' 
 #' @author Michael Floren
 
-scip <- function(y, desmat, c, conv=1e-9, maxit=100, progressBar=TRUE, timeUnit="auto"){
+scip <- function(y, desmat, c, conv=1e-9, maxit=100){
   ### Functions used later on ###
   tau_s <- function(y, desmat, param, c){ #take the design matrix with sampi, koppa, gamma, and the design matrix (written short as "gamma" is a system word)
     sam <- param[1:ncol(desmat)]
@@ -57,19 +57,7 @@ scip <- function(y, desmat, c, conv=1e-9, maxit=100, progressBar=TRUE, timeUnit=
   # Creating initial weights: not tracking these for each iteration
   tau <- tau_s(y=y, desmat=desmat, param=est_param[1,], c=c)
   
-  # Setting the start time (eventually can give a number of how long this took)
-  starttime <- Sys.time()
-  
-  # Use progress bar version if a progress bar was requested: pb is out of the max number of iterations
-  if(progressBar) {
-    cat(paste0("Percentage of maximum iterations completed (i=",maxit,"):\n"))
-    pb <- txtProgressBar(style=3)
-  }
-    
-  # Run EM
-  timing <- numeric() #for large data. take this and tic-toc and timing message out for regular runs...
   for(i in 2:maxit){
-    tic <- Sys.time()
     #optimization function for parameters (only takes parameters as arguments)
     of_param <- function(param){
       Q(y=y, desmat=desmat, tau=tau, param=param, c=c)
@@ -85,31 +73,15 @@ scip <- function(y, desmat, c, conv=1e-9, maxit=100, progressBar=TRUE, timeUnit=
     if(check < conv){
       break
     }
-    if(progressBar)
-      setTxtProgressBar(pb,value=i/maxit)
-    toc <- Sys.time()
-    timing[i-1] <- difftime(toc,tic, units="s")
-    cat("Finished",i,"th iteration at", Sys.Date(),". This iteration took", timing[i-1],"seconds. Average run-time per iteration is", mean(timing), "seconds.\n")
   }
-  if(progressBar){
-    close(pb)
-    if(i == maxit){
-      message(paste0("Convergence not met after maximum number of iterations (i=",maxit,")"))
-    } else {
-      message("Convergence met after ", i, " iterations.")
-    }
-  }
-  endtime <- Sys.time()
-  iterations <- i
   
   # setting output
   est_sam <- est_param[i, 1:ncol(desmat)]
   est_kop <- est_param[i, (ncol(desmat)+1):(2*ncol(desmat))]
   est_gam <- est_param[i, (2*ncol(desmat)+1):(3*ncol(desmat))]
-  runtime <- difftime(endtime, starttime, units = timeUnit) #add |, units='s'| to force this into seconds...
   
   # out
-  list(param=est_param, sc = est_sam, lc=est_kop, logistic=est_gam, runtime=runtime, iterations=iterations)
+  list(sc = est_sam, lc=est_kop, logistic=est_gam)
 }
 
 
