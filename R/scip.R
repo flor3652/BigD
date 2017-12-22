@@ -75,13 +75,19 @@ scip <- function(y, desmat, c, conv=1e-9, maxit=100){
     }
   }
   
+  convergence_issue = 0
+  if(i >= maxit){
+    warning("Convergence not met")
+    convergence_issue = 1
+  }
+  
   # setting output
   est_sam <- est_param[i, 1:ncol(desmat)]
   est_kop <- est_param[i, (ncol(desmat)+1):(2*ncol(desmat))]
   est_gam <- est_param[i, (2*ncol(desmat)+1):(3*ncol(desmat))]
   
   # out
-  list(sc = est_sam, lc=est_kop, logistic=est_gam)
+  list(sc = est_sam, lc=est_kop, logistic=est_gam, iterations=i, convergence_issue=convergence_issue)
 }
 
 
