@@ -4,7 +4,7 @@
 \alias{sim}
 \title{Simulation Function for Dissertation}
 \usage{
-sim(n, c, k = 10, meta_time_unit = "s", progress = TRUE)
+sim(n, c, k = 1000, meta_time_unit = "s", progress = TRUE)
 }
 \description{
 This function will run the simulation for my dissertation. Some of the aspects of the function are specifically designed for this dissertation (such as population parameters), and won't be included as arguments.

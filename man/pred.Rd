@@ -4,14 +4,14 @@
 \alias{pred}
 \title{Prediction Function for Dissertation}
 \usage{
-pred(n, c, sim_dat)
+pred(sim_dat)
 }
 \arguments{
+\item{sim_dat}{Data from the simulation function.}
+
 \item{n}{The sample size to use. This should be 20\% of the actual data used in the simulation.}
 
 \item{c}{The cutoff to use. This should match that used in the simulation.}
-
-\item{sim_dat}{Data from the simulation function.}
 }
 \description{
 This function will run the prediction for my dissertation. The goal is to establish prediction accuracy for each of the models. So, we'll need to generat a design matrix, generate some data, have a predicted value based on the design matrix, have an actual value, then also have an actual group vs a predicted group for each of the models...

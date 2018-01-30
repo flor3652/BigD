@@ -29,7 +29,7 @@ pred <- function(sim_dat){
   }
   
   auc <- function(g, ghat){
-    pROC::auc(pROC::roc(as.numeric(g),as.numeric(ghat)))
+    tryCatch(pROC::auc(pROC::roc(as.numeric(g),as.numeric(ghat))),error=function(x)NA)
   }
   
   # all overall numbers should be the same as for the simulation
@@ -129,7 +129,7 @@ pred <- function(sim_dat){
     names_of_logistic_pieces <- paste0("logistic", 0:c)
     
     #doing the denominator first
-    denom_for_logistic_mat <- matrix(ncol=c+1, nrow=length(y))
+    denom_for_logistic_mat <- matrix(ncol=c+1, nrow=n)
     for(j in 1:(c+1)){ #for all the gammas except for gamma zero, cause this is what the denom sum is. gamma_(c+1) is gamma_J (so including J). Gamma_J is zero.
       denom_for_logistic_mat[,j] <- exp(desmat %*% sim_dat$mip_results[[names_of_logistic_pieces[j]]][i,])
     }
