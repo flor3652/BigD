@@ -1,4 +1,4 @@
-#' @name BigD
+#' @name m-dissertation
 #' @docType package
 #' @title Michael Floren's Dissertation Package: On The Small Count Inflated Poisson Distribution
 #' 
