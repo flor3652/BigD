@@ -1,5 +1,5 @@
-# BigD
-D ideas
+# m-dissertation
+# ideas
 
 Installation of this package directly from GitHub is recommended through the devtools package. Code for installing devtools and this package is included below.
 
