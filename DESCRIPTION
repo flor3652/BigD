@@ -1,4 +1,4 @@
-Package: BigD
+Package: m-dissertation
 Title: Way to disseminate information.
 Version: 0.0.1.0
 Authors@R: person("Michael", "Floren", email = "michael.floren@unco.com", role = c("aut", "cre"))
